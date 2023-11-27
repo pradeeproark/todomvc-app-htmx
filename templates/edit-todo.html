@@ -1,0 +1,9 @@
+<li id="list-item-{{todo.id}}" class="{{"completed" if todo.status}} {{"editing" if todo.editMode}} {{"notEditing" if not todo.editMode }}"  hx-get="/editTodo/{{todo.id}}" hx-trigger="dblclick" hx-swap="outerHTML" hx-target="this">
+    <div class="view">
+        <input class="toggle" type="checkbox" {{'checked' if todo.status}} hx-post="/toggleStatus/{{ todo.id }}" hx-swap="outerHTML" hx-target="#list-item-{{todo.id}}">
+        <label><span id="todo-label" >{{ todo.label }}</span></label>
+        <button class="destroy" hx-delete="/deleteTodo/{{todo.id}}"></button>
+    </div>
+    <input name="edit-todo" class="edit" value="{{ todo.label }}" hx-trigger="keyup[keyCode==13]" hx-post="/updateTodo/{{ todo.id }}" >
+</li>
+{% include "footer-update.html" %}
