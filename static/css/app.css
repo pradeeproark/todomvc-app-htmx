@@ -6,3 +6,7 @@ remove this comment if used
 remove this file if not
 
 */
+
+.hidden {
+    display: none
+}
