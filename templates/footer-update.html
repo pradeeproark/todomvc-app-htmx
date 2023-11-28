@@ -1,20 +1,19 @@
 
-
-			<footer class="footer {{"hidden" if currentState.hideSection}}" hx-swap-oob="outerHTML:.footer">
+			<footer class="footer {{"hidden" if ctx.state.hideSection}}" hx-swap-oob="outerHTML:.footer">
 				<!-- This should be `0 items left` by default -->
-				<span class="todo-count"><strong>{{ currentState.tobeCompletedCount }}</strong> item left</span>
+				<span class="todo-count"><strong>{{ ctx.state.tobeCompletedCount }}</strong> item left</span>
 				<!-- Remove this if you don't implement routing -->
 				<ul class="filters">
 					<li>
-						<a class="{{"selected" if currentState.currentStatusFilter== "All"}}" href="/todos/all" hx-target=".todo-list">All</a>
+						<a class="{{"selected" if ctx.state.currentStatusFilter== "All"}}" href="/todos/all" hx-target=".todo-list">All</a>
 					</li>
 					<li>
-						<a class="{{"selected" if currentState.currentStatusFilter== "active"}}" href="/todos/active" hx-target=".todo-list">Active</a>
+						<a class="{{"selected" if ctx.state.currentStatusFilter== "active"}}" href="/todos/active" hx-target=".todo-list">Active</a>
 					</li>
 					<li>
-						<a class="{{"selected" if currentState.currentStatusFilter== "completed"}}" href="/todos/completed" hx-target=".todo-list">Completed</a>
+						<a class="{{"selected" if ctx.state.currentStatusFilter== "completed"}}" href="/todos/completed" hx-target=".todo-list">Completed</a>
 					</li>
 				</ul>
 				<!-- Hidden if no completed items are left ↓ -->
-				<button class="clear-completed {{"hidden" if not currentState.clearCompleted}}">Clear completed</button>
+				<button class="clear-completed {{"hidden" if not ctx.state.clearCompleted}}">Clear completed</button>
 			</footer>

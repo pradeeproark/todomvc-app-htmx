@@ -17,7 +17,7 @@
 				<input name="new-todo" id="new-todo" class="new-todo" placeholder="What needs to be done?" autofocus hx-post="/addTodo" hx-target=".todo-list" >
 			</header>
 			<!-- This section should be hidden by default and shown when there are todos -->
-			<section class="main {{"hidden" if hideFooter}}">
+			<section class="main {{'hidden' if ctx.state.hideSection}}">
 				<input id="toggle-all" class="toggle-all" type="checkbox">
 				<label for="toggle-all">Mark all as complete</label>
 				<ul class="todo-list" hx-get="/todos" hx-trigger="load">

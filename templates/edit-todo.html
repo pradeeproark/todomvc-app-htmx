@@ -1,3 +1,6 @@
+{% if not todo and ctx.state.selectedIndex %}
+    {% set todo=ctx.todos[ctx.state.selectedIndex] %}
+{% endif %}
 <li id="list-item-{{todo.id}}" class="{{"completed" if todo.status}} {{"editing" if todo.editMode}} {{"notEditing" if not todo.editMode }}"  hx-get="/editTodo/{{todo.id}}" hx-trigger="dblclick" hx-swap="outerHTML" hx-target="this">
     <div class="view">
         <input class="toggle" type="checkbox" {{'checked' if todo.status}} hx-post="/toggleStatus/{{ todo.id }}" hx-swap="outerHTML" hx-target="#list-item-{{todo.id}}">
