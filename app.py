@@ -123,7 +123,7 @@ def toggleStatus(id):
             selectedTodo = todos[index]
             selectedTodo.status = not selectedTodo.status
             currentState.selectedIndex = index
-            currentState = updateState(currentState, todos)
+    currentState = updateState(currentState, todos)
     return render_template("edit-todo.html", ctx=getState())
 
 @app.route("/todos", defaults={"status":"All"})
