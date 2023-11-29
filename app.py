@@ -51,7 +51,7 @@ def getInitialState():
 
 StateTodos = namedtuple('StateTodos', ['state', 'todos'])
 
-def getState():    
+def getState() -> typing.Tuple[State, list[Todo]]:
     if not "currentState" in session:
         session["currentState"] = updateState(getInitialState(), getInitialTodos())
     if not "todos" in session:
@@ -127,6 +127,13 @@ def toggleStatus(id):
             currentState.selectedIndex = index
     currentState = updateState(currentState, todos)
     return render_template("edit-todo.html", ctx=getState())
+
+@app.route("/clearCompleted", methods=['POST'])
+def clearCompleted():
+    currentState, todos = getState()
+    clearedTodos = [todo for todo in todos if not todo.status]
+    updateState(currentState, clearedTodos)
+    return getTodos("All")
 
 @app.route("/todos", defaults={"status":"All"})
 @app.route("/todos/<status>")
