@@ -1,0 +1,1 @@
+<input id="toggle-all" class="toggle-all" type="checkbox" hx-post="/markCompleted" hx-target=".todo-list" {{"hx-swap-oob=true" if swapIn}} {{"checked" if ctx.state.tobeCompletedCount == 0}}>

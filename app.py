@@ -116,6 +116,14 @@ def deleteTodo(id):
     else:
         return Response(status=HTTPStatus.NOT_FOUND)
 
+@app.route("/markCompleted",methods=['POST'])
+def markCompleted():
+    currentState, todos = getState()
+    for todo in todos:
+        todo.status = True
+    updateState(currentState, todos)
+    return getTodos("All")
+
 @app.route("/toggleStatus/<id>",methods=['POST'])
 def toggleStatus(id):
     currentState, todos = getState()

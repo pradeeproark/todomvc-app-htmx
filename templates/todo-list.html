@@ -2,5 +2,7 @@
 {% include 'edit-todo.html' %}
 {% endfor %}
 
-
+{% with swapIn=True %}
+    {% include "mark-completed.html" %}
+{% endwith %}
 {% include "footer-update.html" %}

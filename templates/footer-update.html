@@ -1,4 +1,6 @@
-
+{% with swapIn=True %}
+    {% include "mark-completed.html" %}
+{% endwith %}
 			<footer class="footer {{"hidden" if ctx.state.hideSection}}" hx-swap-oob="outerHTML:.footer">
 				<!-- This should be `0 items left` by default -->
 				<span class="todo-count"><strong>{{ ctx.state.tobeCompletedCount }}</strong> item left</span>
