@@ -71,10 +71,12 @@ def index():
 def addTodo():
     currentState, todos = getState()
     newTodoLabel = request.form.get('new-todo').strip()
+    newTodo = None
     if len(newTodoLabel) > 0:
-        todos.append(Todo(str(uuid4()),newTodoLabel, False, False))
+        newTodo = Todo(str(uuid4()),newTodoLabel, False, False)
+        todos.append(newTodo)
         currentState = updateState(currentState, todos)
-    return render_template('todo-list.html', ctx=getState())
+    return render_template('edit-todo.html', ctx=getState(), todo=newTodo)
 
 @app.route("/editTodo/<id>", methods=['GET'])
 def editTodo(id):

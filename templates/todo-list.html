@@ -2,7 +2,5 @@
 {% include 'edit-todo.html' %}
 {% endfor %}
 
-<input name="new-todo" id="new-todo" class="new-todo" placeholder="What needs to be done?" autofocus hx-post="/addTodo" hx-target=".todo-list" hx-swap-oob="outerHTML:#new-todo">
-
 
 {% include "footer-update.html" %}
