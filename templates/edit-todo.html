@@ -7,6 +7,6 @@
         <label><span id="todo-label" >{{ todo.label }}</span></label>
         <button class="destroy" hx-delete="/deleteTodo/{{todo.id}}"></button>
     </div>
-    <input name="edit-todo" class="edit" value="{{ todo.label }}" hx-trigger="keyup[keyCode==13]" hx-post="/updateTodo/{{ todo.id }}" >
+    <input name="edit-todo" class="edit" value="{{ todo.label }}" hx-trigger="keyup[keyCode==13], blur" hx-post="/updateTodo/{{ todo.id }}" >
 </li>
 {% include "footer-update.html" %}
