@@ -1,19 +1,36 @@
-# TodoMVC App Template
+# TodoMVC using HTMX + HYPERSCRIPT + PYTHON FLASK • 
 
-> Template used for creating [TodoMVC](http://todomvc.com) apps
+> htmx gives you access to AJAX, CSS Transitions, WebSockets and Server Sent Events directly in HTML, using attributes, so you can build modern user interfaces with the simplicity and power of hypertext
 
-![](https://github.com/tastejs/todomvc-app-css/raw/master/screenshot.png)
-
-
-## Getting started
-
-- Read the [Application Specification](https://github.com/tastejs/todomvc/blob/master/app-spec.md) before touching the template.
-
-- Delete this file and rename `app-readme.md` to `readme.md` and fill it out.
-
-- Clone this repo and install the dependencies with [npm](https://npmjs.com) by running: `npm install`.
+> hyperscript - An easy & approachable language for modern web front-ends. Enhance HTML with concise DOM, event and async features. Make writing interactive HTML a joy.
 
 
-## License
+## Resources
 
-<a rel="license" href="http://creativecommons.org/licenses/by/4.0/deed.en_US"><img alt="Creative Commons License" style="border-width:0" src="http://i.creativecommons.org/l/by/4.0/80x15.png" /></a><br />This <span xmlns:dct="http://purl.org/dc/terms/" href="http://purl.org/dc/dcmitype/InteractiveResource" rel="dct:type">work</span> by <a xmlns:cc="http://creativecommons.org/ns#" href="http://sindresorhus.com" property="cc:attributionName" rel="cc:attributionURL">TasteJS</a> is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by/4.0/deed.en_US">Creative Commons Attribution 4.0 International License</a>.
+- [HTMX Website](https://htmx.org)
+- [HTMX Documentation](https://htmx.org/docs/)
+- [Hyperscript Documentation](https://hyperscript.org/docs/)
+
+### Articles
+
+- [Interesting article]()
+
+### How to Run Demo
+
+## Implementation
+
+This implementation of TodoMVC is a prototype to evaluate HTMX along with minimal hyperscript. Since TodoMVC was designed to evaluate full frontend-only frameworks (usually JS, TS), this is an attempt to see how far we can get SPA features with using plain HTML enhanced with HTMX and where if at all we need some scripting how elegant (or not) Hyperscript can be used.
+
+Some key violations from the [TodoMVC spec](https://github.com/tastejs/todomvc/blob/master/app-spec.md) which was not considered important for this prototype are
+
+* Does not use localStorage. Session is held in cookies and state processed on server side.
+* You need a server to run the demo.
+
+### Notes on Flask Server implementation
+
+The server side has been kept minimal and simple. Spartan. It is not likely idiomatic.
+
+
+## Credit
+
+Created by [Pradeep Roark](http://pradeeproark.com)
