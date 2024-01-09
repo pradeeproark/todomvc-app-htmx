@@ -11,12 +11,14 @@
 - [HTMX Documentation](https://htmx.org/docs/)
 - [Hyperscript Documentation](https://hyperscript.org/docs/)
 
-### Articles
-
-- [Interesting article]()
-
 ### How to Run Demo
 
+1. checkout repo
+2. Install todomvc dependencies 
+```npm install```
+3. Ensure you have [flask installed](https://flask.palletsprojects.com/en/3.0.x/installation/)
+4. ```flask run```
+5. Access app on http://127.0.0.1:5000
 ## Implementation
 
 This implementation of TodoMVC is a prototype to evaluate HTMX along with minimal hyperscript. Since TodoMVC was designed to evaluate full frontend-only frameworks (usually JS, TS), this is an attempt to see how far we can get SPA features with using plain HTML enhanced with HTMX and where if at all we need some scripting how elegant (or not) Hyperscript can be used.
